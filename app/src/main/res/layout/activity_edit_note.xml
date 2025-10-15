@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/android:colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Write Your Story"
+                    style="@style/AppTextTitle"
+                    android:layout_marginBottom="4dp"
+                    android:drawableStart="@android:drawable/ic_menu_edit"
+                    android:drawablePadding="8dp"/>
+                    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Capture your thoughts and memories"
+                    style="@style/AppTextSubtitle"/>
+                    
+            </LinearLayout>
+            
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Title Input -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+            
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/AppTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Note Title"
+                app:startIconDrawable="@android:drawable/ic_menu_sort_alphabetically"
+                app:boxBackgroundMode="none">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:maxLines="2"/>
+                    
+            </com.google.android.material.textfield.TextInputLayout>
+            
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Content Input -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="16dp">
+            
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/AppTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Write your story here..."
+                app:startIconDrawable="@android:drawable/ic_menu_edit"
+                app:boxBackgroundMode="none">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|start"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="4dp"
+                    android:minLines="12"/>
+                    
+            </com.google.android.material.textfield.TextInputLayout>
+            
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/btnSave"
+            style="@style/AppButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Save Note"
+            android:textSize="16sp"
+            android:drawableStart="@android:drawable/ic_menu_save"
+            android:drawablePadding="8dp"
+            app:backgroundTint="@color/accent_purple"/>
+            
+    </LinearLayout>
+    
+</ScrollView>

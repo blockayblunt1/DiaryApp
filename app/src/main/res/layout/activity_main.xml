@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    android:background="?attr/android:colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Header Section -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <!-- Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Diary"
+                    style="@style/AppTextTitle"
+                    android:layout_marginBottom="12dp"/>
+                
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="start">
+                    
+                    <Button
+                        android:id="@+id/btnSettings"
+                        style="@style/AppButtonSecondary"
+                        android:text="Settings"
+                        android:drawableStart="@android:drawable/ic_menu_preferences"
+                        android:drawablePadding="8dp"/>
+                    
+                    <Button
+                        android:id="@+id/btnExportAll"
+                        style="@style/AppButtonExport"
+                        android:text="Export All"
+                        android:drawableStart="@android:drawable/ic_menu_save"
+                        android:drawablePadding="8dp"
+                        android:layout_marginStart="8dp"/>
+                    
+                    <Button
+                        android:id="@+id/btnSort"
+                        style="@style/AppButtonSecondary"
+                        android:text="Sort"
+                        android:drawableStart="@android:drawable/ic_menu_sort_by_size"
+                        android:drawablePadding="8dp"
+                        android:layout_marginStart="8dp"/>
+                        
+                </LinearLayout>
+                
+            </LinearLayout>
+            
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Search Section -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp">
+            
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:queryHint="Search your notes..."
+                app:iconifiedByDefault="false"/>
+                
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Empty State -->
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/AppTextSubtitle"
+            android:gravity="center"
+            android:padding="16dp"/>
+
+        <!-- Notes List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp"/>
+
+    </LinearLayout>
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/accent_purple"
+        app:tint="@color/white"/>
+        
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/android:colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Settings Header -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    style="@style/AppTextTitle"
+                    android:layout_marginBottom="4dp"/>
+                    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customize your diary experience"
+                    style="@style/AppTextSubtitle"/>
+                    
+            </LinearLayout>
+            
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Theme Setting -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Appearance"
+                    style="@style/AppTextTitle"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:drawableStart="@android:drawable/ic_menu_view"
+                    android:drawablePadding="8dp"/>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dark Theme"
+                            style="@style/AppTextSubtitle"
+                            android:textColor="@color/text_primary"/>
+                            
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Switch to dark mode for better night reading"
+                            style="@style/AppTextCaption"/>
+                            
+                    </LinearLayout>
+                    
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/accent_purple"
+                        app:trackTint="@color/accent_purple_dark"/>
+                        
+                </LinearLayout>
+                
+            </LinearLayout>
+            
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Font Size Setting -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Text Size"
+                    style="@style/AppTextTitle"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"
+                    android:drawableStart="@android:drawable/ic_menu_zoom"
+                    android:drawablePadding="8dp"/>
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adjust text size for comfortable reading"
+                    style="@style/AppTextCaption"
+                    android:layout_marginBottom="12dp"/>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A"
+                        android:textSize="12sp"
+                        style="@style/AppTextSubtitle"/>
+                    
+                    <SeekBar
+                        android:id="@+id/seekFont"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="16dp"
+                        android:progressTint="@color/accent_purple"
+                        android:thumbTint="@color/accent_purple"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A"
+                        android:textSize="20sp"
+                        style="@style/AppTextSubtitle"/>
+                        
+                </LinearLayout>
+                
+            </LinearLayout>
+            
+        </com.google.android.material.card.MaterialCardView>
+        
+    </LinearLayout>
+    
+</ScrollView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/AppCard"
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="2dp"
+    android:layout_marginVertical="2dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Note Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp">
+            
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/AppTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginBottom="4dp"
+                android:ellipsize="end"
+                android:maxLines="2"/>
+
+            <TextView
+                android:id="@+id/tvDate"
+                style="@style/AppTextCaption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@android:drawable/ic_menu_recent_history"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"/>
+                
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+            
+            <Button
+                android:id="@+id/btnExportOne"
+                style="@style/AppButtonSmall"
+                android:text="Export"
+                android:drawableStart="@android:drawable/ic_menu_save"
+                android:drawablePadding="4dp"
+                app:backgroundTint="@color/button_export"/>
+                
+            <Button
+                android:id="@+id/btnDelete"
+                style="@style/AppButtonSmall"
+                android:text="Delete"
+                android:drawableStart="@android:drawable/ic_menu_delete"
+                android:drawablePadding="4dp"
+                android:layout_marginStart="8dp"
+                app:backgroundTint="@color/button_delete"/>
+                
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+</com.google.android.material.card.MaterialCardView>
