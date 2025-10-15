@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -41,6 +42,12 @@ android {
     }
 }
 
+ksp {
+    arg("room.schemaLocation", "$projectDir/schemas")
+    arg("room.incremental", "true")
+    arg("room.expandProjection", "true")
+}
+
 dependencies {
     // --- Core ---
     implementation(libs.androidx.core.ktx)
@@ -52,11 +59,18 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.2.0")
 
     // --- Room (for database) ---
+    implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
 
-    // --- Lifecycle (optional, for coroutine scope, etc.) ---
+    // --- ViewModel & LiveData ---
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.6")
+    implementation("androidx.activity:activity-ktx:1.9.2")
+    implementation("androidx.fragment:fragment-ktx:1.8.4")
+
+    // --- Lifecycle (for coroutine scope, etc.) ---
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
-
     // --- Testing ---
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
